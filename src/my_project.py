@@ -2,9 +2,12 @@ import re
 import hashlib
 import logging
 import json
-from logger import setup_logging
+import os
+from src.logger import setup_logging
 
-with open("blacklist_login.json", "r", encoding="utf-8") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(BASE_DIR, "blacklist_login.json"), "r", encoding="utf-8") as f:
     BLACKLIST_LOGIN = json.load(f)
 
 PHONE_PATTERN = re.compile(r"^\+\d-\d{3}-\d{3}-\d{4}$")
