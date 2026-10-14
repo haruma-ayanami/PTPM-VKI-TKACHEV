@@ -20,6 +20,9 @@ def main() -> None:
     while True:
         try:
             success, message = controller.run()
+        except EOFError:
+            print("\nВвод завершён. Программа остановлена.")
+            return
         except TypeError:
             logging.exception("Ошибка: Некорректные данные")
             print(

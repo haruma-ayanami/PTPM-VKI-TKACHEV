@@ -13,6 +13,20 @@ class TestValidator(unittest.TestCase):
         self.assertEqual(h1, h2)
         self.assertTrue(len(h1) == 16)
 
+    def test_mask_password_rejects_non_string(self):
+        with self.assertRaises(TypeError):
+            mask_password(1234567)  # type: ignore
+
+    def test_login_not_string(self):
+        ok, msg = self.validator.validate(1234567, "Пароль123!", "Пароль123!")  # type: ignore
+        self.assertFalse(ok)
+        self.assertIn("строкой", msg)
+
+    def test_login_blacklist_case_insensitive(self):
+        ok, msg = self.validator.validate("Admin", "Пароль123!", "Пароль123!")
+        self.assertFalse(ok)
+        self.assertIn("черном списке", msg)
+
     def test_login_valid_email(self):
         ok, msg = self.validator.validate("user@example.com", "Пароль123!", "Пароль123!")
         self.assertTrue(ok)

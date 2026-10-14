@@ -43,7 +43,7 @@ class TestIntegration(unittest.TestCase):
         success, message = controller.run()
 
         self.assertTrue(success)
-        self.assertEqual(message, "")
+        self.assertEqual(message, "Регистрация прошла успешно")
 
         validator_mock.validate.assert_not_called()
 

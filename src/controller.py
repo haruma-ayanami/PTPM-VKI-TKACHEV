@@ -2,6 +2,9 @@ from .validator import AuthValidator
 from .db import RegistrationDB
 from .interfaces import AbstractUserInterface, AbstractExternalService
 
+SUCCESS_MESSAGE = "Регистрация прошла успешно"
+DEFAULT_ERROR_MESSAGE = "Ошибка регистрации"
+
 
 class Controller:
     def __init__(
@@ -21,29 +24,18 @@ class Controller:
 
         existing = self.db.get(login, password, confirm)
         if existing is not None:
-            success = bool(existing["auth_result"])
-            message = existing["error_message"] or ""
-            if success:
-                result_str = (
-                    f"success: True, message: Регистрация прошла успешно"
-                )
-            else:
-                msg = message or "Ошибка регистрации"
-                result_str = f"success: False, message: {msg}"
-            self.external.send(result_str)
-            return success, message
-
-        ok, msg = self.validator.validate(login, password, confirm)
-        if ok:
-            message_out = "Регистрация прошла успешно"
+            ok = existing["auth_result"]
+            message = self._result_message(ok, existing["error_message"])
         else:
-            message_out = msg or "Ошибка регистрации"
+            ok, error = self.validator.validate(login, password, confirm)
+            message = self._result_message(ok, error)
+            self.db.add(login, password, confirm, ok, "" if ok else message)
 
-        self.db.add(login, password, confirm, ok, message_out if not ok else "")
+        self.external.send(f"success: {ok}, message: {message}")
+        return ok, message
 
+    @staticmethod
+    def _result_message(ok: bool, error: str) -> str:
         if ok:
-            result_str = f"success: True, message: {message_out}"
-        else:
-            result_str = f"success: False, message: {message_out}"
-        self.external.send(result_str)
-        return ok, message_out
+            return SUCCESS_MESSAGE
+        return error or DEFAULT_ERROR_MESSAGE

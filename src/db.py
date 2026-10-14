@@ -1,6 +1,8 @@
 import sqlite3
 from typing import Optional
 
+from .validator import mask_password
+
 
 class RegistrationDB:
     def __init__(self, db_path: str = ":memory:") -> None:
@@ -31,6 +33,11 @@ class RegistrationDB:
                 """
             )
 
+    @staticmethod
+    def _key(login: str, password: str, confirm: str) -> tuple[str, str, str]:
+        # Пароли в БД хранятся только в замаскированном виде
+        return login, mask_password(password), mask_password(confirm)
+
     def add(
         self,
         login: str,
@@ -39,6 +46,7 @@ class RegistrationDB:
         result: bool,
         error_msg: str = "",
     ) -> None:
+        key = self._key(login, password, confirm)
         with self.conn:
             self.conn.execute(
                 """
@@ -46,7 +54,7 @@ class RegistrationDB:
                 (login, password, confirm_password, auth_result, error_message)
                 VALUES (?, ?, ?, ?, ?)
                 """,
-                (login, password, confirm, 1 if result else 0, error_msg or ""),
+                (*key, 1 if result else 0, error_msg or ""),
             )
 
     def get(
@@ -55,13 +63,14 @@ class RegistrationDB:
         password: str,
         confirm: str,
     ) -> Optional[dict]:
+        key = self._key(login, password, confirm)
         cur = self.conn.execute(
             """
             SELECT login, password, confirm_password, auth_result, error_message
             FROM registrations
             WHERE login = ? AND password = ? AND confirm_password = ?
             """,
-            (login, password, confirm),
+            key,
         )
         row = cur.fetchone()
         if row is None:
@@ -75,13 +84,14 @@ class RegistrationDB:
         }
 
     def delete(self, login: str, password: str, confirm: str) -> bool:
+        key = self._key(login, password, confirm)
         with self.conn:
             cur = self.conn.execute(
                 """
                 DELETE FROM registrations
                 WHERE login = ? AND password = ? AND confirm_password = ?
                 """,
-                (login, password, confirm),
+                key,
             )
             return cur.rowcount > 0
 

@@ -6,7 +6,7 @@ import os
 BLACKLIST_PATH = os.path.join(os.path.dirname(__file__), "blacklist_login.json")
 
 with open(BLACKLIST_PATH, "r", encoding="utf-8") as f:
-    BLACKLIST_LOGIN = json.load(f)
+    BLACKLIST_LOGIN = {item.lower() for item in json.load(f)}
 
 PHONE_PATTERN = re.compile(r"^\+\d-\d{3}-\d{3}-\d{4}$")
 EMAIL_PATTERN = re.compile(r"^[\w.+-]+@[\w-]+\.[a-zA-Z]{2,}$")
@@ -26,6 +26,8 @@ def is_cyrillic(c: str) -> bool:
 
 
 def mask_password(password: str) -> str:
+    if not isinstance(password, str):
+        raise TypeError("Пароль должен быть строкой")
     return hashlib.sha256(password.encode()).hexdigest()[:16]
 
 
@@ -36,7 +38,7 @@ def validate_login(login: str) -> tuple[bool, str]:
     if not login:
         return False, "Логин не может быть пустым"
 
-    if login in BLACKLIST_LOGIN:
+    if login.lower() in BLACKLIST_LOGIN:
         return False, "Логин в черном списке"
 
     if PHONE_PATTERN.match(login):
@@ -109,6 +111,3 @@ class AuthValidator:
 
         result = validate_password(password, confirm)
         return result
-
-    def mask_password(self, password: str) -> str:
-        return mask_password(password)

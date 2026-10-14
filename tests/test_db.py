@@ -1,6 +1,7 @@
 import unittest
 
 from src.db import RegistrationDB
+from src.validator import mask_password
 
 
 class TestDB(unittest.TestCase):
@@ -47,6 +48,19 @@ class TestDB(unittest.TestCase):
         self.assertIsNotNone(row)
         self.assertTrue(row["auth_result"])
         self.assertEqual(row["error_message"], "")
+
+    def test_passwords_stored_masked(self):
+        self.db.add("alice123", "Пароль123!", "Пароль123!", True, "")
+        stored = self.db.conn.execute(
+            "SELECT password, confirm_password FROM registrations"
+        ).fetchone()
+        self.assertEqual(stored["password"], mask_password("Пароль123!"))
+        self.assertNotEqual(stored["password"], "Пароль123!")
+        self.assertEqual(stored["confirm_password"], mask_password("Пароль123!"))
+
+    def test_non_string_password_rejected(self):
+        with self.assertRaises(TypeError):
+            self.db.get("alice123", 1234567, 1234567)  # type: ignore
 
 
 if __name__ == "__main__":
