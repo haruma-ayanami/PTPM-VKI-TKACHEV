@@ -1,4 +1,3 @@
-from pathlib import Path
 import unittest
 from unittest.mock import Mock, patch
 
@@ -6,16 +5,30 @@ from src.database import DatabaseRepository
 from src.parser import ForumParser
 
 
-FIXTURE = Path(__file__).parent / "fixtures" / "forum_page.html"
+SAMPLE_HTML = """
+<!doctype html>
+<html>
+  <body>
+    <article id="post_4812" class="post">
+      <a class="username">alex_dev</a>
+      <div class="post-content"><p>Hello <strong>forum</strong>!</p></div>
+    </article>
+    <div class="comment" data-comment-id="4813">
+      <span class="comment-author">maria</span>
+      <div class="comment-body">A second <em>reply</em>.</div>
+    </div>
+  </body>
+</html>
+"""
 
 
 class ForumParserTests(unittest.TestCase):
     def setUp(self):
-        self.html = FIXTURE.read_text(encoding="utf-8")
+        self.html = SAMPLE_HTML
         self.parser = ForumParser()
 
     @patch("src.parser.requests.get")
-    def test_parse_page_extracts_posts_from_saved_html_fixture(self, get):
+    def test_parse_page_extracts_posts_from_html_response(self, get):
         response = Mock()
         response.text = self.html
         get.return_value = response

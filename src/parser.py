@@ -1,6 +1,7 @@
 """Загрузка HTML-страницы форума и извлечение сообщений."""
 
 import re
+from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
@@ -15,11 +16,12 @@ class ForumParser:
         ".post, .comment, .message, article"
     )
     AUTHOR_SELECTOR = (
-        ".username, .user-name, .post-author, .comment-author, "
+        ".username, .names .username, .names [data-user-card], "
+        ".user-name, .post-author, .comment-author, "
         ".message-author, .author, .user, [rel='author'], [itemprop='author']"
     )
     MESSAGE_SELECTOR = (
-        ".post-content, .post-body, .post-message, .comment-content, "
+        ".cooked, .post-content, .post-body, .post-message, .comment-content, "
         ".comment-body, .comment-text, .message-content, .message-body, "
         ".post-text, .content, [itemprop='articleBody'], [itemprop='text']"
     )
@@ -34,15 +36,22 @@ class ForumParser:
     def __init__(self, timeout=15):
         self.timeout = timeout
 
-    def parse_page(self, url):
-        """Скачивает страницу и возвращает список найденных сообщений."""
+    def parse_page(self, url, save_html_to=None):
+        """Скачивает страницу, при необходимости сохраняет её HTML и разбирает."""
         response = requests.get(
             url,
             headers=self.HEADERS,
             timeout=self.timeout,
         )
         response.raise_for_status()
-        return self.parse_html(response.text)
+
+        html = response.text
+        if save_html_to is not None:
+            snapshot_path = Path(save_html_to)
+            snapshot_path.parent.mkdir(parents=True, exist_ok=True)
+            snapshot_path.write_text(html, encoding="utf-8")
+
+        return self.parse_html(html)
 
     def parse_html(self, html):
         """Разбирает HTML-текст; используется и для локальных тестовых страниц."""

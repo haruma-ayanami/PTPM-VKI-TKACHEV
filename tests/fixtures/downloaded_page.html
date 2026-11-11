@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Wiki post edits no longer bumped when last in the topic thread - Product Support - Discourse Meta</title>
+    <meta name="description" content="In the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list, because otherwise wiki edits would be easily missed and go by unnoticed. 
+(See: Should an edit to any wiki…">
+    <meta name="generator" content="Discourse 2026.11.0-latest.1 - https://github.com/discourse/discourse version f7930cd07df2e466a54744d070bb1503c4ad1051">
+<link rel="icon" type="image/png" href="https://global.discourse-cdn.com/meta/optimized/3X/b/3/b33be9538df3547fcf9d1a51a4637d77392ac6f9_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://global.discourse-cdn.com/meta/optimized/4X/b/1/2/b12885a6f292ceffc222608846855f25a272835b_2_180x180.jpeg">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+
+<meta name="color-scheme" content="light dark">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<link rel="canonical" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959" />
+
+<meta name="discourse-track-view-session-id" content="u49vTSwL1c8rLK1XY4Ds2dCh3iXkLj2n">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://meta.discourse.org/opensearch.xml" title="Discourse Meta Search">
+
+        <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959" hreflang="x-default" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=en" hreflang="en" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=zh_CN" hreflang="zh-CN" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=es" hreflang="es" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=fr" hreflang="fr" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=de" hreflang="de" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=pt_BR" hreflang="pt-BR" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=it" hreflang="it" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=ar" hreflang="ar" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=ja" hreflang="ja" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=ru" hreflang="ru" />
+      <link rel="alternate" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959?tl=ko" hreflang="ko" />
+
+    <link href="https://sea3.discourse-cdn.com/meta/stylesheets/color_definitions_meta-light_144_331_39e1e7f282d5c85d1f21b04678daa51617f3c36c.css?__ws=meta.discourse.org" media="(prefers-color-scheme: light)" rel="stylesheet" class="light-scheme" data-scheme-id="144"/><link href="https://sea3.discourse-cdn.com/meta/stylesheets/color_definitions_meta-dark_145_331_cbfd4239f6f626637e39d00686bbbb19548869e6.css?__ws=meta.discourse.org" media="(prefers-color-scheme: dark)" rel="stylesheet" class="dark-scheme" data-scheme-id="145"/>
+
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common"  />
+
+
+
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/automation_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="automation"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/boards_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="boards"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/chat_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="chat"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/checklist_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="checklist"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-ai_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-ai"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-assign_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-assign"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-cakeday_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-chat-integration_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-chat-integration"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-customer-flair-plugin_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-customer-flair-plugin"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-data-explorer_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-details_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-doc-categories_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-doc-categories"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-events_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-events"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-gamification_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-gamification"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-github_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-github"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-hubspot_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-hubspot"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-lazy-videos_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-lazy-videos"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-local-dates_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-math_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-math"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-new-features-feeds_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-new-features-feeds"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-personalized-feed_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-personalized-feed"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-presence_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-reactions_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-reactions"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-rewind_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-rewind"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-saved-searches_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-solved_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-suggested-edits_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-suggested-edits"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-templates_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-templates"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-theme-install-button_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-theme-install-button"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-topic-voting_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-topic-voting"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-user-notes_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-workflows_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-workflows"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-yearly-review_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="discourse-yearly-review"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/footnote_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="footnote"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/hosted-site_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="hosted-site"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/live_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="live"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/poll_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/spoiler-alert_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="spoiler-alert"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/chat_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="chat_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-ai_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="discourse-ai_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-assign_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="discourse-assign_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-customer-flair-plugin_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="discourse-customer-flair-plugin_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-events_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="discourse-events_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-gamification_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="discourse-gamification_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-reactions_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="discourse-reactions_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-rewind_mobile_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="discourse-rewind_mobile"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/chat_desktop_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="chat_desktop"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-ai_desktop_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="discourse-ai_desktop"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-events_desktop_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="discourse-events_desktop"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-gamification_desktop_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="discourse-gamification_desktop"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/discourse-reactions_desktop_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="discourse-reactions_desktop"  />
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/poll_desktop_8d3c1caccbdf0a53f959a99d1883f91d476f5915.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_264_3cf6bbd77e1a6445bcbfc5338f2edc8cdbc73cd6.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="264" data-theme-name="custom header links (icons)"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_409_8c4d260665094944c603bf5f6e1b807612b436dc.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="409" data-theme-name="custom topic list ads"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_334_61479ed3479c77010e9fdf585166a1f5b9338b69.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="334" data-theme-name="design experiments"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_129_446e8002239540e849db0b106fc054a8678027e7.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="129" data-theme-name="discotoc"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_171_96fd50ec883e469224858e03fc5800c1573aafc1.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="171" data-theme-name="discourse icon"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_428_6625ff3ec4c3d13ddf25a697602b5ead2ebaf116.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="428" data-theme-name="discourse lucide icons"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_425_fba53552653c81258be91f6b853a706c66777a3e.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="425" data-theme-name="discourse meta embed component"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_440_09ddb0b2ff23aaab6ef749b70a7d84e492209224.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="440" data-theme-name="discourse pele"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_222_937586dfe059973917ccdebe2d00504b173fc8d8.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="222" data-theme-name="docs card filter"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_412_df6ce95b945bc5177e973c67bf455200fc91d368.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="412" data-theme-name="ftee badges"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_180_68d452403699090474a1cebde18805058c2725c9.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="180" data-theme-name="placeholder forms"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_202_1fc1fd70f83042ae49016a3215c65d2491422c2d.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="202" data-theme-name="reply template"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_279_528c70e3700613a657545a0abdab0b216345ad66.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="279" data-theme-name="sidebar theme toggle"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_155_064a504973ca2ea6dccd5f99f7ba2573d0425b94.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="155" data-theme-name="tag icons"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_208_9a62886b74b28fa1ad54e770799e6dafbc44b11d.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="208" data-theme-name="team pm likes"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_184_e8ea36612a5542887add40735538a3cd4a2f51a6.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="184" data-theme-name="topic thumbnails"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_230_9289a00be429f8eed52531fdebee4fa402f824ec.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="230" data-theme-name="unformatted code detector"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_236_b12581e249b92a92bbd3311d62dde65246a9d350.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="236" data-theme-name="user card directory"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_309_90310ebaf38d25c733e11c3ae5a2303cbac5c1e0.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="309" data-theme-name="whisper warning"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_331_62b5588d9582a7fed539095fadcea5f18350c60a.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="331" data-theme-name="meta branded"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_404_08f9cc3d24f0359e90b2bbe25542c3aa5ecf9531.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="404" data-theme-name="collapse ai triage whispers"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_194_f0f7e515a0eaa0fb1347b6d899709a70e8c767dd.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="194" data-theme-name="create-poll-first"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_379_de2deaa43d9f9c8ba39b01ad0397ea629b2aed96.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="379" data-theme-name="developer guides noedit"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_439_97f983c3a5910b5ae419a08a83c168cf097ab54b.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="439" data-theme-name="discovery sidebar"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_437_1a0ee1ef783de551a945053fdbda6fb06bbbc6ad.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="437" data-theme-name="fix: ai usage tables"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_358_b441cfdfa8933a5f52bf70fff72b34f6e3a678c2.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="358" data-theme-name="hide &#39;check doc&#39;"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_165_325bf0402fc41eda30e864560854fe8a1f281eba.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="165" data-theme-name="hide sidebar for anon - hidden whispers for non-staff"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_298_46d3de68a6062769c36b26e28efc31d21bb6c86e.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="298" data-theme-name="logo avatar exception"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_421_f0018fc38bf00758f48637364bfb4a3ff6d95bc3.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="421" data-theme-name="meta branded hotfixes"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_436_4e3781b15fad768d80ef1f0c6d169b86c08fa579.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="436" data-theme-name="meta branded livestream layout fix"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_418_a9d26625c4d99d71128d3df3f746c498e653fa27.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="418" data-theme-name="sales mutual action plan table styling"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_267_8a228a565d1f251de53e9f080d560f2c17153ebf.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="267" data-theme-name="tech advocate only group assign header button"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_434_a65cd5bd992d4b933e0897e055427b5484c63f97.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="434" data-theme-name="tech advocate only whisper toggle re-positioning"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/common_theme_355_528441ebf5b9304f85fca2e9fb7f23b89e0fe85f.css?__ws=meta.discourse.org" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="355" data-theme-name="topic voting customisations"/>
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/mobile_theme_180_cecfc59b78d143f4913e2f47a23ca4d2e4c07524.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="mobile_theme" data-theme-id="180" data-theme-name="placeholder forms"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/mobile_theme_184_9f2b0086c0dc583de12b5d167fa60dc69010e89c.css?__ws=meta.discourse.org" media="(width < 40rem)" rel="stylesheet" data-target="mobile_theme" data-theme-id="184" data-theme-name="topic thumbnails"/>
+  <link href="https://sea3.discourse-cdn.com/meta/stylesheets/desktop_theme_222_542f022f5f7367fe620c10d402eca46e945f2ea6.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="desktop_theme" data-theme-id="222" data-theme-name="docs card filter"/>
+<link href="https://sea3.discourse-cdn.com/meta/stylesheets/desktop_theme_427_7d39e518b5194927995871570fbb9b3b5181de4e.css?__ws=meta.discourse.org" media="(width >= 40rem)" rel="stylesheet" data-target="desktop_theme" data-theme-id="427" data-theme-name="full width (center-main-outlet)"/>
+
+
+
+    <meta http-equiv="origin-trial" content="Avxkn9pqiyK+1F1LLCIuXTFKanihzkcBp9P63oOYbFG3xZdBX56KG7ffcvWPy2R1QrcGCtLSXEEx+BEz8m95+AwAAABTeyJvcmlnaW4iOiJodHRwczovL21ldGEuZGlzY291cnNlLm9yZzo0NDMiLCJmZWF0dXJlIjoiQmFkZ2luZyIsImV4cGlyeSI6MTU1NjIyNDYwM30=">
+<script defer="" data-domain="meta.discourse.org,rollup-meta.discourse.org,rollup-all.discourse.org" src="https://www.discourse.org/js/script.outbound-links.tagged-events.js" nonce="V8yNmk0sNNNxEFUvH0a23Oofm"></script>
+<meta name="ahrefs-site-verification" content="07293e630779edf08a6b9b4d1e302e1a182ba6e2861118d7a92b66ea08fb11b0">
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Wiki post edits no longer bumped when last in the topic thread&#39;" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959.rss" />
+    <meta property="og:site_name" content="Discourse Meta" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://global.discourse-cdn.com/meta/optimized/4X/e/d/5/ed5f7316432ac5a1a0301821d784cb4435a425b5_2_1024x537.png" />
+<meta property="og:image" content="https://global.discourse-cdn.com/meta/optimized/4X/e/d/5/ed5f7316432ac5a1a0301821d784cb4435a425b5_2_1024x537.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:url" content="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959" />
+<meta name="twitter:url" content="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959" />
+<meta property="og:title" content="Wiki post edits no longer bumped when last in the topic thread" />
+<meta name="twitter:title" content="Wiki post edits no longer bumped when last in the topic thread" />
+<meta property="og:description" content="In the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list, because otherwise wiki edits would be easily missed and go by unnoticed.  (See: Should an edit to any wiki post bump the entire topic?)  That feature request was not honored. But there was a trick to get a similar result:   Make sure that the wiki post is the last message posted in the topic thread. Lock the topic thread so that no further replies can be added. Delete the notificatio..." />
+<meta name="twitter:description" content="In the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list, because otherwise wiki edits would be easily missed and go by unnoticed.  (See: Should an edit to any wiki post bump the entire topic?)  That feature request was not honored. But there was a trick to get a similar result:   Make sure that the wiki post is the last message posted in the topic thread. Lock the topic thread so that no further replies can be added. Delete the notificatio..." />
+<meta property="og:article:section" content="Product Support" />
+<meta property="og:article:section:color" content="CE96C9" />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="1 min 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="6 ❤" />
+<meta property="article:published_time" content="2026-11-10T06:01:30+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <link rel="alternate" type="text/markdown" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959.md">
+    
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Wiki post edits no longer bumped when last in the topic thread","datePublished":"2026-11-10T06:01:29.940Z","mainEntity":{"@type":"Question","answerCount":8,"author":{"@type":"Person","name":"aschrijver","url":"https://meta.discourse.org/u/aschrijver"},"dateModified":"2026-11-10T09:11:12.384Z","datePublished":"2026-11-10T06:01:29.940Z","name":"Wiki post edits no longer bumped when last in the topic thread","text":"In the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list, because otherwise wiki edits would be easily missed and go by unnoticed.\n\n(See: Should an edit to any wiki post bump the entire topic?)\n\nThat feature request was not honored. But there was a trick to get a similar result:\n\nMake sure that the wiki post is the last message posted in the topic thread.\n\nLock the topic thread so that no further replies can be added.\n\nDelete the notification on locking the thread, so that the wiki post comes last again.\n\nThough a bit unwieldy, requiring staff interaction, this used to worked. But in 2026.11.0-latest no longer.\n\nOn Social coding commons forum I maintain the backlog for fediverse-related Delightful commons curated lists. There are frequent additions, and I want both forum members and the public to be aware of them, and encourage to add their own entries to the wiki. But since the topic is not  bumped after an edit, it scrolls out of view, does not get attention.\n\n[image]\n\nWiki: Fediverse delightful list backlog\n\nCocreation square 💃🕺\n\nDelightful commons\n\nwiki\n\nThis topic is for keeping track of the backlog of candidates to include to the three fediverse-related delightful lists. The post directly below this one is a wiki post that anyone can update and edit. Below that, reports of what has been included...\n\nReading time: 3 mins 🕑\n\nLikes: 1 ❤\n\nIs this behavior as it should be? And if yes, is it desirable behavior?","upvoteCount":1,"suggestedAnswer":[{"@type":"Answer","author":{"@type":"Person","name":"chapoi","url":"https://meta.discourse.org/u/chapoi"},"dateModified":"2026-11-10T08:54:53.927Z","datePublished":"2026-11-10T08:54:53.876Z","text":"[image] aschrijver:\n\nIs this behavior as it should be? And if yes, is it desirable behavior?\n\nAh yes, we recently changed the system so that “small posts”, including locking announcements, no longer bump the topic.\n\nSee\n\n[image]\n\nSmall post actions no longer tracked or watched\n\nAnnouncements\n\nDiscourse has a special post type that denotes “small action”.\n\nIt looks like this:\n\n[image]\n\nThis happens when you close or open topics; it can happen when you assign topics and in various other conditions.\n\nOver the years, we have heard many complaints from people who simply do not want to be notified about this administrivia. This is particularly noticeable when admins bulk close topics or can come as a surprise when topics are auto-closed due to timers.\n\nWe are partway through rolling out a…","upvoteCount":1,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/2"},{"@type":"Answer","author":{"@type":"Person","name":"aschrijver","url":"https://meta.discourse.org/u/aschrijver"},"dateModified":"2026-11-10T08:59:14.774Z","datePublished":"2026-11-10T08:59:14.741Z","text":"Thank you. I deleted the small posts, so the large wiki post is last in the thread. The unintended (I think) side effect of the change is that edits to the wiki no longer lead to a bump as they did before.\n\n[Snapshot that shows a deleted regular post and one deleted small post (about \"Pinning\")]","upvoteCount":0,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/3"},{"@type":"Answer","author":{"@type":"Person","name":"chapoi","url":"https://meta.discourse.org/u/chapoi"},"dateModified":"2026-11-10T09:01:56.913Z","datePublished":"2026-11-10T09:01:56.866Z","text":"Yes, I do think that’s a side-effect because as far as I’m aware, we don’t distinguish between “regular edit typo” and “edit was made to a wiki”. An easy solution based on topic type would be janky (edit can be a typo fix in a wiki too), and an elegant solution would not be easy.\n\nI understand the wiki use case, but we most likely won’t revert this change. Could be worth a feature request, if enough other users have the same issue.","upvoteCount":1,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/4"},{"@type":"Answer","author":{"@type":"Person","name":"aschrijver","url":"https://meta.discourse.org/u/aschrijver"},"dateModified":"2026-11-10T09:06:05.088Z","datePublished":"2026-11-10T09:06:05.042Z","text":"So the change is not just that “small posts” don’t bump the topic, but also edits to the last post don’t. :thinking:\n\nFor me not bumping would make Wiki Posts wholly unusable functionality, since changes would go unnoticed. I use them quite a lot, and they are a handy feature. They are also collectively edited data, so you want the collective to become aware of changes.","upvoteCount":1,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/5"},{"@type":"Answer","author":{"@type":"Person","name":"renato","url":"https://meta.discourse.org/u/renato"},"dateModified":"2026-11-10T10:49:37.524Z","datePublished":"2026-11-10T10:49:37.479Z","text":"[image] aschrijver:\n\nIn the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list, because otherwise wiki edits would be easily missed and go by unnoticed.\n\nHave you tried just editing the wiki OP? I believe this works as intended now.","upvoteCount":0,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/6"},{"@type":"Answer","author":{"@type":"Person","name":"aschrijver","url":"https://meta.discourse.org/u/aschrijver"},"dateModified":"2026-11-10T13:53:19.576Z","datePublished":"2026-11-10T13:53:19.536Z","text":"Thanks. Editing the top post just above the wiki doesn’t work. I just tried, but topic didn’t get bumped.","upvoteCount":0,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/7"},{"@type":"Answer","author":{"@type":"Person","name":"renato","url":"https://meta.discourse.org/u/renato"},"dateModified":"2026-11-10T14:05:58.235Z","datePublished":"2026-11-10T14:05:58.168Z","text":"[image] aschrijver:\n\nEditing the top post just above the wiki doesn’t work\n\nNo, I mean, editing the wiki post itself, if it’s also the OP (original post, post #1), should bump the topic to show at the top of the topic list.\n\n[image] aschrijver:\n\nIn the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list","upvoteCount":1,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/8"},{"@type":"Answer","author":{"@type":"Person","name":"aschrijver","url":"https://meta.discourse.org/u/aschrijver"},"dateModified":"2026-11-10T14:28:58.196Z","datePublished":"2026-11-10T14:28:58.156Z","text":"Ah yes, that works. I tried on a different wiki post that is the only one in the thread. Happy that that works, at least, though it is yet another constraint.\n\nI used the first post in the thread as uneditable instruction posts for editing the wiki below it. This is often useful to explain what kind of information to be collected in the wiki and how to format it, etcetera. And without ‘polluting’ the wiki contents with those instructions (wiki markdown is regularly copied to other non-forum locations).\n\nBut I accept this as a workaround. Though “bump upon edit, if the last post is a wiki” would have my preference.","upvoteCount":1,"url":"https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/9"}]}}</script>
+  </head>
+  <body class="crawler ">
+    
+    <header>
+  <a href="/">Discourse Meta</a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959">Wiki post edits no longer bumped when last in the topic thread</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/support/6" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #CE96C9'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Product Support</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <meta itemprop="name" content="Wiki post edits no longer bumped when last in the topic thread" />
+          <link itemprop="item" href="https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959" />
+          <meta itemprop="position" content="2" />
+        </span>
+      </div>
+
+  </div>
+
+  
+
+    <div itemscope="itemscope" itemtype="https://schema.org/QAPage">
+      <meta itemprop='name' content='Wiki post edits no longer bumped when last in the topic thread'>
+      <link itemprop='url' href='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959'>
+      <meta itemprop='datePublished' content='2026-11-10T06:01:29Z'>
+      <meta itemprop='keywords' content=''>
+
+      <section class="ai-published-summary">
+  <h2>AI-generated summary</h2>
+  <div class="ai-published-summary__text" itemprop="abstract">
+    <p><a href="/t/-/416959/1">aschrijver</a> reports a regression in version <code>2026.11.0-latest</code> where editing a wiki post that is the last message in a locked topic no longer bumps the topic to the top of the topic list. Previously, users employed a trick involving locking the topic and deleting notification posts to ensure wiki edits appeared as the latest activity, making them visible to the community. <a href="/t/-/416959/2">chapoi</a> explains that this change is intentional, part of a broader update where “small posts” and minor actions no longer trigger topic bumps to reduce noise. However, <a href="/t/-/416959/3">aschrijver</a> argues that this has the unintended side effect of making wiki edits invisible, as they no longer surface in the topic list. <a href="/t/-/416959/4">chapoi</a> acknowledges the difficulty in distinguishing between trivial edits and significant wiki updates, stating that reverting the change is unlikely and suggesting a feature request might be necessary.</p>
+<p><a href="/t/-/416959/5">aschrijver</a> expresses concern that this behavior renders wiki functionality less useful for collaborative data maintenance, such as curated lists, because updates go unnoticed. <a href="/t/-/416959/6">renato</a> suggests that editing the wiki post if it is the Original Post (OP) should still bump the topic. <a href="/t/-/416959/7">aschrijver</a> initially misunderstood, thinking <a href="/t/-/416959/8">renato</a> meant editing a post <em>above</em> the wiki, but later <a href="/t/-/416959/9">confirms</a> that having the wiki post as the OP does indeed bump the topic upon edit. <a href="/t/-/416959/9">aschrijver</a> accepts this as a workaround but notes it imposes constraints, such as requiring the wiki to be the first post rather than allowing an instructional first post. They reiterate a preference for a solution that bumps topics upon editing the last post if it is a wiki, regardless of its position in the thread.</p>
+  </div>
+</section>
+
+
+        <div itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/Question">
+          <meta itemprop='answerCount' content='8'><meta itemprop='datePublished' content='2026-11-10T06:01:29Z'><meta itemprop='name' content='Wiki post edits no longer bumped when last in the topic thread'><meta itemprop='upvoteCount' content='1'>
+
+
+          <div id='post_1' data-qa-question="true" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/aschrijver'><span itemprop="name">aschrijver</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/aschrijver'>
+                (Arnold Schrijver)
+              </span>
+
+
+                <link itemprop="image" href="https://global.discourse-cdn.com/meta/original/4X/e/d/5/ed5f7316432ac5a1a0301821d784cb4435a425b5.png">
+
+              <span class="crawler-post-infos">
+                  <time  datetime='2026-11-10T06:01:30Z' class='post-time'>
+                    November 10, 2026,  6:01am
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T09:11:12Z'>
+              <span itemprop="position">1</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <p>In the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list, because otherwise wiki edits would be easily missed and go by unnoticed.</p>
+<p>(See: <a href="https://meta.discourse.org/t/should-an-edit-to-any-wiki-post-bump-the-entire-topic/104228" class="inline-onebox">Should an edit to any wiki post bump the entire topic?</a>)</p>
+<p>That feature request was not honored. But there was a trick to get a similar result:</p>
+<ul>
+<li>Make sure that the wiki post is the last message posted in the topic thread.</li>
+<li>Lock the topic thread so that no further replies can be added.</li>
+<li>Delete the notification on locking the thread, so that the wiki post comes last again.</li>
+</ul>
+<p>Though a bit unwieldy, requiring staff interaction, this used to worked. But in <code>2026.11.0-latest</code> no longer.</p>
+<p>On <a href="https://coding.social" rel="noopener nofollow ugc">Social coding commons</a> forum I maintain the backlog for fediverse-related <a href="https://delightful.coding.social" rel="noopener nofollow ugc">Delightful commons</a> curated lists. There are frequent additions, and I want both forum members and the public to be aware of them, and encourage to add their own entries to the wiki. But since the topic is not  bumped after an edit, it scrolls out of view, does not get attention.</p>
+<aside class="onebox discoursetopic" data-onebox-src="https://discuss.coding.social/t/wiki-fediverse-delightful-list-backlog/770">
+  <header class="source">
+      <img src="https://global.discourse-cdn.com/meta/original/4X/c/c/e/cce25f4422040499c992f29a1c57afab07a39d45.svg" class="site-icon" alt="" data-dominant-color="" width="500" height="500">
+
+      <a href="https://discuss.coding.social/t/wiki-fediverse-delightful-list-backlog/770" target="_blank" rel="noopener nofollow ugc" title="10:10AM - 31 October 2025">Discuss Social Coding – 31 Oct 25</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/362;"><img src="https://global.discourse-cdn.com/meta/optimized/4X/e/d/5/ed5f7316432ac5a1a0301821d784cb4435a425b5_2_690x362.png" class="thumbnail" alt="" data-dominant-color="E0D5D8" width="690" height="362"></div>
+
+<div class="title-wrapper">
+  <h3><a href="https://discuss.coding.social/t/wiki-fediverse-delightful-list-backlog/770" target="_blank" rel="noopener nofollow ugc">Wiki: Fediverse delightful list backlog</a></h3>
+  <div class="topic-category">
+      <span class="badge-wrapper bullet">
+        <span class="badge-category-bg" style="background-color: #25AAE2;"></span>
+        <span class="badge-category clear-badge">
+          <span class="category-name">Cocreation square 💃🕺</span>
+        </span>
+      </span>
+      <span class="badge-wrapper bullet">
+        <span class="badge-category-bg" style="background-color: #25AAE2;"></span>
+        <span class="badge-category clear-badge">
+          <span class="category-name">Delightful commons</span>
+        </span>
+      </span>
+    <div class="topic-header-extra">
+      <div class="list-tags">
+        <div class="discourse-tags">
+          <svg class="fa d-icon d-icon-tag svg-icon svg-string"><use href="#tag"></use></svg>
+            <span class="discourse-tag simple">wiki</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <p>This topic is for keeping track of the backlog of candidates to include to the three fediverse-related delightful lists. The post directly below this one is a wiki post that anyone can update and edit. Below that, reports of what has been included...</p>
+
+  <p>
+    <span class="label1">Reading time: 3 mins 🕑</span>
+      <span class="label2">Likes: 1 ❤</span>
+  </p>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<p>Is this behavior as it should be? And if yes, is it desirable behavior?</p>
+            </div>
+
+
+
+            
+
+
+          </div>
+          <div id='post_2' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/chapoi'><span itemprop="name">chapoi</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/chapoi'>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T08:54:53Z' class='post-time'>
+                    November 10, 2026,  8:54am
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T08:54:53Z'>
+              <span itemprop="position">2</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <aside class="quote no-group" data-username="aschrijver" data-post="1" data-topic="416959">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://sea3.discourse-cdn.com/meta/user_avatar/meta.discourse.org/aschrijver/48/92004_2.png" class="avatar"> aschrijver:</div>
+<blockquote>
+<p>Is this behavior as it should be? And if yes, is it desirable behavior?</p>
+</blockquote>
+</aside>
+<p>Ah yes, we recently changed the system so that “small posts”, including locking announcements, no longer bump the topic.</p>
+<p>See</p>
+<aside class="quote quote-modified" data-post="1" data-topic="404058">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img alt="" width="24" height="24" src="https://sea3.discourse-cdn.com/meta/user_avatar/meta.discourse.org/sam/48/102149_2.png" class="avatar">
+    <div class="quote-title__text-content">
+      <a href="https://meta.discourse.org/t/small-post-actions-no-longer-tracked-or-watched/404058">Small post actions no longer tracked or watched</a> <a class="badge-category__wrapper " href="/c/news-and-events/announcements/67"><span data-category-id="67" style="--category-badge-color: #00AEEF; --category-badge-text-color: #000000; --parent-category-badge-color: #00AEEF;" data-parent-category-id="207" data-drop-close="true" class="badge-category --style-icon --has-parent"><svg class="fa d-icon svg-icon svg-node" aria-hidden="true"><svg id="bullhorn" viewBox="0 0 512 512" overflow="visible">
+  <path d="M461.2 18.9C472.7 24 480 35.4 480 48l0 416c0 12.6-7.3 24-18.8 29.1s-24.8 3.2-34.3-5.1l-46.6-40.7c-43.6-38.1-98.7-60.3-156.4-63l0 95.7c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96C57.3 384 0 326.7 0 256S57.3 128 128 128l84.5 0c61.8-.2 121.4-22.7 167.9-63.3l46.6-40.7c9.4-8.3 22.9-10.2 34.3-5.1zM224 320l0 .2c70.3 2.7 137.8 28.5 192 73.4l0-275.3c-54.2 44.9-121.7 70.7-192 73.4L224 320z"></path>
+</svg></svg>
+<span class="badge-category__name">Announcements</span></span></a>
+    </div>
+  </div>
+  <blockquote>
+    Discourse has a special post type that denotes “small action”. 
+It looks like this: 
+ <a class="lightbox" href="https://global.discourse-cdn.com/meta/original/4X/6/f/4/6f422d09538e714b9fc1baa11e451b4c37e14720.png" data-download-href="/uploads/short-url/fSeMoaKYtNK49mnjy1PjAADvZ2U.png?dl=1" title="image">[image]</a> 
+This happens when you close or open topics; it can happen when you assign topics and in various other conditions. 
+Over the years, we have heard many complaints from people who simply do not want to be notified about this administrivia. This is particularly noticeable when admins bulk close topics or can come as a surprise when topics are auto-closed due to timers. 
+We are partway through rolling out a…
+  </blockquote>
+</aside>
+
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='1'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/2'>
+          </div>
+          <div id='post_3' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/aschrijver'><span itemprop="name">aschrijver</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/aschrijver'>
+                (Arnold Schrijver)
+              </span>
+
+
+                <link itemprop="image" href="https://global.discourse-cdn.com/meta/original/4X/8/3/9/839f84b8896ac04943eb9a3bd3ea348d1dbd978e.png">
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T08:59:14Z' class='post-time'>
+                    November 10, 2026,  8:59am
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T08:59:14Z'>
+              <span itemprop="position">3</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <p>Thank you. I deleted the small posts, so the large wiki post is last in the thread. The unintended (I think) side effect of the change is that edits to the wiki no longer lead to a bump as they did before.</p>
+<p><div class="lightbox-wrapper"><a class="lightbox" href="https://global.discourse-cdn.com/meta/original/4X/8/3/9/839f84b8896ac04943eb9a3bd3ea348d1dbd978e.png" data-download-href="/uploads/short-url/iMojy3GJsDdstb7rxvGakpBjwLk.png?dl=1" title="Snapshot that shows a deleted regular post and one deleted small post (about &quot;Pinning&quot;)" rel="noopener nofollow ugc"><img src="https://global.discourse-cdn.com/meta/optimized/4X/8/3/9/839f84b8896ac04943eb9a3bd3ea348d1dbd978e_2_690x396.png" alt="Snapshot that shows a deleted regular post and one deleted small post (about &quot;Pinning&quot;)" data-base62-sha1="iMojy3GJsDdstb7rxvGakpBjwLk" width="690" height="396" srcset="https://global.discourse-cdn.com/meta/optimized/4X/8/3/9/839f84b8896ac04943eb9a3bd3ea348d1dbd978e_2_690x396.png, https://global.discourse-cdn.com/meta/optimized/4X/8/3/9/839f84b8896ac04943eb9a3bd3ea348d1dbd978e_2_1035x594.png 1.5x, https://global.discourse-cdn.com/meta/original/4X/8/3/9/839f84b8896ac04943eb9a3bd3ea348d1dbd978e.png 2x" data-dominant-color="312623" aria-description="A dark-themed forum screenshot titled '2026 July updates' shows a comment from user aschrijver (Dreamer) explaining that an entry was deleted to keep the wiki last in the thread so it gets bumped on updates, with a pinned note below. (Captioned by AI)"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">Snapshot that shows a deleted regular post and one deleted small post (about "Pinning")</span><span class="informations">1050×604 45.6 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div></p>
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='0'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/3'>
+          </div>
+          <div id='post_4' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/chapoi'><span itemprop="name">chapoi</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/chapoi'>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T09:01:56Z' class='post-time'>
+                    November 10, 2026,  9:01am
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T09:01:56Z'>
+              <span itemprop="position">4</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <p>Yes, I do think that’s a side-effect because as far as I’m aware, we don’t distinguish between “regular edit typo” and “edit was made to a wiki”. An easy solution based on topic type would be janky (edit can be a typo fix in a wiki too), and an elegant solution would not be easy.</p>
+<p>I understand the wiki use case, but we most likely won’t revert this change. Could be worth a feature request, if enough other users have the same issue.</p>
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='1'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/4'>
+          </div>
+          <div id='post_5' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/aschrijver'><span itemprop="name">aschrijver</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/aschrijver'>
+                (Arnold Schrijver)
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T09:06:05Z' class='post-time'>
+                    November 10, 2026,  9:06am
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T09:06:05Z'>
+              <span itemprop="position">5</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <p>So the change is not just that “small posts” don’t bump the topic, but also edits to the last post don’t. <img src="https://emoji.discourse-cdn.com/twitter/thinking.png?v=16" title=":thinking:" class="emoji" alt=":thinking:" loading="lazy" width="20" height="20"></p>
+<p>For me not bumping would make Wiki Posts wholly unusable functionality, since changes would go unnoticed. I use them quite a lot, and they are a handy feature. They are also collectively edited data, so you want the collective to become aware of changes.</p>
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='1'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/5'>
+          </div>
+          <div id='post_6' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/renato'><span itemprop="name">renato</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/renato'>
+                (Renato Atilio)
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T10:49:37Z' class='post-time'>
+                    November 10, 2026, 10:49am
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T10:49:37Z'>
+              <span itemprop="position">6</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <aside class="quote no-group" data-username="aschrijver" data-post="1" data-topic="416959">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://sea3.discourse-cdn.com/meta/user_avatar/meta.discourse.org/aschrijver/48/92004_2.png" class="avatar"> aschrijver:</div>
+<blockquote>
+<p>In the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list, because otherwise wiki edits would be easily missed and go by unnoticed.</p>
+</blockquote>
+</aside>
+<p>Have you tried just editing the wiki OP? I believe this works as intended now.</p>
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='0'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/6'>
+          </div>
+          <div id='post_7' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/aschrijver'><span itemprop="name">aschrijver</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/aschrijver'>
+                (Arnold Schrijver)
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T13:53:19Z' class='post-time'>
+                    November 10, 2026,  1:53pm
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T13:53:19Z'>
+              <span itemprop="position">7</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <p>Thanks. Editing the top post just above the wiki doesn’t work. I just tried, but topic didn’t get bumped.</p>
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='0'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/7'>
+          </div>
+          <div id='post_8' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/renato'><span itemprop="name">renato</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/renato'>
+                (Renato Atilio)
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T14:05:58Z' class='post-time'>
+                    November 10, 2026,  2:05pm
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T14:05:58Z'>
+              <span itemprop="position">8</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <aside class="quote no-group" data-username="aschrijver" data-post="7" data-topic="416959">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://sea3.discourse-cdn.com/meta/user_avatar/meta.discourse.org/aschrijver/48/92004_2.png" class="avatar"> aschrijver:</div>
+<blockquote>
+<p>Editing the top post just above the wiki doesn’t work</p>
+</blockquote>
+</aside>
+<p>No, I mean, editing the wiki post itself, if it’s also the OP (original post, post <span class="hashtag-raw">#1</span>), should bump the topic to show at the top of the topic list.</p>
+<aside class="quote no-group" data-username="aschrijver" data-post="1" data-topic="416959">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://sea3.discourse-cdn.com/meta/user_avatar/meta.discourse.org/aschrijver/48/92004_2.png" class="avatar"> aschrijver:</div>
+<blockquote>
+<p>In the past I made a request that an edit to a wiki posted bumped the topic to show at the top of the topic list</p>
+</blockquote>
+</aside>
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='1'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/8'>
+          </div>
+          <div id='post_9' itemprop="suggestedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer" class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://meta.discourse.org/u/aschrijver'><span itemprop="name">aschrijver</span></a>
+                  <meta itemprop='url' content='https://meta.discourse.org/u/aschrijver'>
+                (Arnold Schrijver)
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop="datePublished" datetime='2026-11-10T14:28:58Z' class='post-time'>
+                    November 10, 2026,  2:28pm
+                  </time>
+                  <meta itemprop='dateModified' content='2026-11-10T14:28:58Z'>
+              <span itemprop="position">9</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <p>Ah yes, that works. I tried on a different wiki post that is the only one in the thread. Happy that that works, at least, though it is yet another constraint.</p>
+<p>I used the first post in the thread as uneditable instruction posts for editing the wiki below it. This is often useful to explain what kind of information to be collected in the wiki and how to format it, etcetera. And without ‘polluting’ the wiki contents with those instructions (wiki markdown is regularly copied to other non-forum locations).</p>
+<p>But I accept this as a workaround. Though “bump upon edit, if the last post is a wiki” would have my preference.</p>
+            </div>
+
+
+
+            
+
+<meta itemprop='upvoteCount' content='1'><meta itemprop='url' content='https://meta.discourse.org/t/wiki-post-edits-no-longer-bumped-when-last-in-the-topic-thread/416959/9'>
+          </div>
+
+        </div>
+    </div>
+
+
+    <div id="related-topics" class="more-topics__list " role="complementary" aria-labelledby="related-topics-title">
+  <h3 id="related-topics-title" class="more-topics__list-title">
+    Related topics
+  </h3>
+  <div class="topic-list-container" itemscope itemtype='http://schema.org/ItemList'>
+    <meta itemprop='itemListOrder' content='http://schema.org/ItemListOrderDescending'>
+    <table class='topic-list'>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th></th>
+          <th class="replies">Replies</th>
+          <th class="views">Views</th>
+          <th>Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="topic-list-item" id="topic-list-item-79121">
+            <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='1'>
+              <span class="link-top-line">
+                <a itemprop='url' href='https://meta.discourse.org/t/when-wikis-are-edited-they-should-be-bumped/79121' class='title raw-link raw-topic-link'>When wikis are edited, they should be bumped</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href='/c/contribute/feature/2' class='badge-wrapper bullet'>
+                    <span class='badge-category-bg' style='background-color: #0088CC'></span>
+                    <span class='badge-category clear-badge'>
+                      <span class='category-name'>Feature</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class='posts' title='posts'>12</span>
+            </td>
+            <td class="views">
+              <span class='views' title='views'>2009</span>
+            </td>
+            <td>
+              March 16, 2018
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-390033">
+            <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='2'>
+              <span class="link-top-line">
+                <a itemprop='url' href='https://meta.discourse.org/t/returning-bumping-after-editing-last-post/390033' class='title raw-link raw-topic-link'>Returning bumping after editing last post</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href='/c/contribute/feature/2' class='badge-wrapper bullet'>
+                    <span class='badge-category-bg' style='background-color: #0088CC'></span>
+                    <span class='badge-category clear-badge'>
+                      <span class='category-name'>Feature</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class='posts' title='posts'>12</span>
+            </td>
+            <td class="views">
+              <span class='views' title='views'>745</span>
+            </td>
+            <td>
+              April 16, 2026
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-383582">
+            <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='3'>
+              <span class="link-top-line">
+                <a itemprop='url' href='https://meta.discourse.org/t/new-way-to-track-edits-on-wiki-posts/383582' class='title raw-link raw-topic-link'>New way to track edits on wiki posts?</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href='/c/support/6' class='badge-wrapper bullet'>
+                    <span class='badge-category-bg' style='background-color: #CE96C9'></span>
+                    <span class='badge-category clear-badge'>
+                      <span class='category-name'>Product Support</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                      <a href='https://meta.discourse.org/tag/wiki-posts/25' class='discourse-tag'>wiki-posts</a>
+                      
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class='posts' title='posts'>17</span>
+            </td>
+            <td class="views">
+              <span class='views' title='views'>734</span>
+            </td>
+            <td>
+              October 4, 2025
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-80971">
+            <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='4'>
+              <span class="link-top-line">
+                <a itemprop='url' href='https://meta.discourse.org/t/make-wiki-edits-count/80971' class='title raw-link raw-topic-link'>Make Wiki Edits Count</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href='/c/contribute/feature/2' class='badge-wrapper bullet'>
+                    <span class='badge-category-bg' style='background-color: #0088CC'></span>
+                    <span class='badge-category clear-badge'>
+                      <span class='category-name'>Feature</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                      <a href='https://meta.discourse.org/tag/wiki-posts/25' class='discourse-tag'>wiki-posts</a>
+                      
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class='posts' title='posts'>6</span>
+            </td>
+            <td class="views">
+              <span class='views' title='views'>982</span>
+            </td>
+            <td>
+              February 20, 2018
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-384225">
+            <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='5'>
+              <span class="link-top-line">
+                <a itemprop='url' href='https://meta.discourse.org/t/editing-timestamp-of-a-1-post-topic-prevents-bumping/384225' class='title raw-link raw-topic-link'>Editing timestamp of a 1-post topic prevents bumping</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href='/c/contribute/bug/1' class='badge-wrapper bullet'>
+                    <span class='badge-category-bg' style='background-color: #0088CC'></span>
+                    <span class='badge-category clear-badge'>
+                      <span class='category-name'>Bug</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class='posts' title='posts'>7</span>
+            </td>
+            <td class="views">
+              <span class='views' title='views'>484</span>
+            </td>
+            <td>
+              October 6, 2025
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/guidelines' itemprop="url">Guidelines </a>
+        </span>
+      </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://www.discourse.org/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>
